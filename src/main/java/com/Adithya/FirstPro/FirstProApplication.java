@@ -9,8 +9,13 @@ public class FirstProApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(FirstProApplication.class, args);
-		Alien alien = context.getBean(Alien.class);
-		alien.print();
+
+		Alien obj = context.getBean(Alien.class);
+		System.out.println(obj.getAge());
+		obj.code();
+
+//		Laptop obj1 = context.getBean(Laptop.class);
+//		obj1.compile();
 	}
 
 }

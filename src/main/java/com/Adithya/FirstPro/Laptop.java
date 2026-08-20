@@ -1,16 +1,18 @@
 package com.Adithya.FirstPro;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Laptop {
+@Primary
+public class Laptop implements Computer{
 
-    @Autowired
-    CPU cpu;
+    public Laptop(){
+        System.out.println("laptop object created");
+    }
 
-    public void laptop(){
-        System.out.println("Apple laptop");
-        cpu.cpu();
+    @Override
+    public void compile(){
+        System.out.println("compiling in laptop");
     }
 }
